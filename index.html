@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📞 Contact Management System</h1>
+            <p>Manage your contacts easily with full CRUD operations</p>
+        </header>
+
+        <!-- Add/Edit Contact Form -->
+        <div class="form-section">
+            <h2 id="form-title">Add New Contact</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Address *</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" id="submit-btn">Add Contact</button>
+                    <button type="button" id="cancel-btn" style="display: none;">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <h2>Search Contacts</h2>
+            <input type="text" id="search-input" placeholder="Search by name, email, or phone...">
+        </div>
+
+        <!-- Contacts Display -->
+        <div class="contacts-section">
+            <h2>All Contacts (<span id="contact-count">0</span>)</h2>
+            <div id="contacts-container">
+                <!-- Contacts will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="message" class="message" style="display: none;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
